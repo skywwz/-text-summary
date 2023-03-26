@@ -1,6 +1,10 @@
 import openai
+
 openai.api_key = "YOUR_API_KEY"
-text = 
+
+with open('filename.txt', 'r') as file:
+    text = file.read()
+
 # 定义文本总结函数
 def summarize_text(text):
     response = openai.Completion.create(
@@ -13,7 +17,6 @@ def summarize_text(text):
     return summary
 
 # 测试函
-text = "On a sunny day, the sky is blue and the clouds are white. Birds fly in the sky and sing songs. People enjoy picnics in the park and have fun."
 print(summarize_text(text))
 # 输出：The sky is blue and the clouds are white. Birds fly in the sky and sing songs. People enjoy picnics in the park and have fun.
 
